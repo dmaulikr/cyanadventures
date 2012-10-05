@@ -8,6 +8,7 @@
 
 #import "Title screen.h"
 #import "BattleScene.h"
+#import "StoryGameFirstPanel.h"
 
 @implementation Title_screen
 
@@ -56,7 +57,8 @@
 
 - (void) startGame: (id) sender
 {
-   [[CCDirector sharedDirector] replaceScene:[BattleScene scene]];
+   // [[CCDirector sharedDirector] replaceScene:[BattleScene scene]];
+    [[CCDirector sharedDirector] replaceScene: [StoryGameFirstPanel scene]];
 }
 
 - (void) secondChoice: (id) sender

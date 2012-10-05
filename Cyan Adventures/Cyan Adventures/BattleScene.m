@@ -12,7 +12,7 @@
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
 
-#pragma mark - HelloWorldLayer
+#pragma mark - BattleScene
 
 // HelloWorldLayer implementation
 @implementation BattleScene

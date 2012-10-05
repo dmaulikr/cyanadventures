@@ -131,7 +131,6 @@
 		4C0AF5B3161F31FE00B6E3AA /* vec4.c in Sources */ = {isa = PBXBuildFile; fileRef = 4C0AF5B2161F31FE00B6E3AA /* vec4.c */; };
 		4C0AF5B8161F31FE00B6E3AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0AF5B7161F31FE00B6E3AA /* main.m */; };
 		4C0AF5BB161F31FE00B6E3AA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0AF5BA161F31FE00B6E3AA /* AppDelegate.m */; };
-		4C0AF5BE161F31FE00B6E3AA /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0AF5BD161F31FE00B6E3AA /* HelloWorldLayer.m */; };
 		4C0AF5C1161F31FE00B6E3AA /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0AF5C0161F31FE00B6E3AA /* IntroLayer.m */; };
 		4CEA9532161F3E6A00CDC25C /* BattleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA9531161F3E6A00CDC25C /* BattleScene.m */; };
 		4CEA9541161F3F6500CDC25C /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA9538161F3F6500CDC25C /* loading.png */; };
@@ -156,6 +155,11 @@
 		4CEA9561161F405900CDC25C /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA9560161F405900CDC25C /* logo.png */; };
 		4CEA9563161F406300CDC25C /* logo-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA9562161F406300CDC25C /* logo-hd.png */; };
 		4CEA9565161F406700CDC25C /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA9564161F406700CDC25C /* logo.png */; };
+		E068FFC7161F75D20007D14A /* nicepicture-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E068FFC5161F75D20007D14A /* nicepicture-hd.png */; };
+		E068FFC8161F75D20007D14A /* nicepicture.png in Resources */ = {isa = PBXBuildFile; fileRef = E068FFC6161F75D20007D14A /* nicepicture.png */; };
+		E068FFCB161F77450007D14A /* StoryGameFirstPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = E068FFCA161F77440007D14A /* StoryGameFirstPanel.m */; };
+		E068FFCE161F7F8D0007D14A /* stickfigureenemy-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E068FFCC161F7F8D0007D14A /* stickfigureenemy-hd.png */; };
+		E068FFCF161F7F8D0007D14A /* stickfigureenemy.png in Resources */ = {isa = PBXBuildFile; fileRef = E068FFCD161F7F8D0007D14A /* stickfigureenemy.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -417,8 +421,6 @@
 		4C0AF5B7161F31FE00B6E3AA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4C0AF5B9161F31FE00B6E3AA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4C0AF5BA161F31FE00B6E3AA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4C0AF5BC161F31FE00B6E3AA /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		4C0AF5BD161F31FE00B6E3AA /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		4C0AF5BF161F31FE00B6E3AA /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		4C0AF5C0161F31FE00B6E3AA /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
 		4CEA9530161F3E6A00CDC25C /* BattleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleScene.h; sourceTree = "<group>"; };
@@ -446,6 +448,12 @@
 		4CEA9560161F405900CDC25C /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		4CEA9562161F406300CDC25C /* logo-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-hd.png"; sourceTree = "<group>"; };
 		4CEA9564161F406700CDC25C /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		E068FFC5161F75D20007D14A /* nicepicture-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nicepicture-hd.png"; sourceTree = "<group>"; };
+		E068FFC6161F75D20007D14A /* nicepicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nicepicture.png; sourceTree = "<group>"; };
+		E068FFC9161F77440007D14A /* StoryGameFirstPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryGameFirstPanel.h; sourceTree = "<group>"; };
+		E068FFCA161F77440007D14A /* StoryGameFirstPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryGameFirstPanel.m; sourceTree = "<group>"; };
+		E068FFCC161F7F8D0007D14A /* stickfigureenemy-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stickfigureenemy-hd.png"; sourceTree = "<group>"; };
+		E068FFCD161F7F8D0007D14A /* stickfigureenemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickfigureenemy.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -508,6 +516,8 @@
 		4C0AF441161F31FC00B6E3AA /* Cyan Adventures */ = {
 			isa = PBXGroup;
 			children = (
+				4CEA9531161F3E6A00CDC25C /* BattleScene.m */,
+				4CEA9530161F3E6A00CDC25C /* BattleScene.h */,
 				4CEA954A161F3F8900CDC25C /* mysecondbutton_selected.png */,
 				4CEA954B161F3F8900CDC25C /* mythirdbutton.png */,
 				4CEA954C161F3F8900CDC25C /* mysecondbutton.png */,
@@ -518,15 +528,13 @@
 				4CEA9558161F3FA600CDC25C /* Title screen.m */,
 				4C0AF5B9161F31FE00B6E3AA /* AppDelegate.h */,
 				4C0AF5BA161F31FE00B6E3AA /* AppDelegate.m */,
-				4C0AF5BC161F31FE00B6E3AA /* HelloWorldLayer.h */,
-				4C0AF5BD161F31FE00B6E3AA /* HelloWorldLayer.m */,
 				4C0AF5BF161F31FE00B6E3AA /* IntroLayer.h */,
 				4C0AF5C0161F31FE00B6E3AA /* IntroLayer.m */,
+				E068FFC9161F77440007D14A /* StoryGameFirstPanel.h */,
+				E068FFCA161F77440007D14A /* StoryGameFirstPanel.m */,
 				4C0AF442161F31FC00B6E3AA /* Resources */,
 				4C0AF45C161F31FC00B6E3AA /* libs */,
 				4C0AF5B5161F31FE00B6E3AA /* Supporting Files */,
-				4CEA9530161F3E6A00CDC25C /* BattleScene.h */,
-				4CEA9531161F3E6A00CDC25C /* BattleScene.m */,
 			);
 			path = "Cyan Adventures";
 			sourceTree = "<group>";
@@ -534,6 +542,10 @@
 		4C0AF442161F31FC00B6E3AA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E068FFCC161F7F8D0007D14A /* stickfigureenemy-hd.png */,
+				E068FFCD161F7F8D0007D14A /* stickfigureenemy.png */,
+				E068FFC5161F75D20007D14A /* nicepicture-hd.png */,
+				E068FFC6161F75D20007D14A /* nicepicture.png */,
 				4CEA9560161F405900CDC25C /* logo.png */,
 				4CEA955E161F405100CDC25C /* logo-hd.png */,
 				4CEA9538161F3F6500CDC25C /* loading.png */,
@@ -989,6 +1001,10 @@
 				4CEA9561161F405900CDC25C /* logo.png in Resources */,
 				4CEA9563161F406300CDC25C /* logo-hd.png in Resources */,
 				4CEA9565161F406700CDC25C /* logo.png in Resources */,
+				E068FFC7161F75D20007D14A /* nicepicture-hd.png in Resources */,
+				E068FFC8161F75D20007D14A /* nicepicture.png in Resources */,
+				E068FFCE161F7F8D0007D14A /* stickfigureenemy-hd.png in Resources */,
+				E068FFCF161F7F8D0007D14A /* stickfigureenemy.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1101,10 +1117,10 @@
 				4C0AF5B3161F31FE00B6E3AA /* vec4.c in Sources */,
 				4C0AF5B8161F31FE00B6E3AA /* main.m in Sources */,
 				4C0AF5BB161F31FE00B6E3AA /* AppDelegate.m in Sources */,
-				4C0AF5BE161F31FE00B6E3AA /* HelloWorldLayer.m in Sources */,
 				4C0AF5C1161F31FE00B6E3AA /* IntroLayer.m in Sources */,
 				4CEA9532161F3E6A00CDC25C /* BattleScene.m in Sources */,
 				4CEA9559161F3FA600CDC25C /* Title screen.m in Sources */,
+				E068FFCB161F77450007D14A /* StoryGameFirstPanel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
