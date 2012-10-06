@@ -16,7 +16,6 @@
 		4C0AF43C161F31FC00B6E3AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0AF43B161F31FC00B6E3AA /* Foundation.framework */; };
 		4C0AF43E161F31FC00B6E3AA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0AF43D161F31FC00B6E3AA /* CoreGraphics.framework */; };
 		4C0AF440161F31FC00B6E3AA /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0AF43F161F31FC00B6E3AA /* GameKit.framework */; };
-		4C0AF444161F31FC00B6E3AA /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C0AF443161F31FC00B6E3AA /* Default.png */; };
 		4C0AF446161F31FC00B6E3AA /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C0AF445161F31FC00B6E3AA /* Default-Landscape~ipad.png */; };
 		4C0AF448161F31FC00B6E3AA /* fps_images.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C0AF447161F31FC00B6E3AA /* fps_images.png */; };
 		4C0AF44A161F31FC00B6E3AA /* fps_images-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C0AF449161F31FC00B6E3AA /* fps_images-hd.png */; };
@@ -173,7 +172,6 @@
 		4C0AF43B161F31FC00B6E3AA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4C0AF43D161F31FC00B6E3AA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		4C0AF43F161F31FC00B6E3AA /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
-		4C0AF443161F31FC00B6E3AA /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/Default.png; sourceTree = "<group>"; };
 		4C0AF445161F31FC00B6E3AA /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape~ipad.png"; path = "Resources/Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		4C0AF447161F31FC00B6E3AA /* fps_images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fps_images.png; path = Resources/fps_images.png; sourceTree = "<group>"; };
 		4C0AF449161F31FC00B6E3AA /* fps_images-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fps_images-hd.png"; path = "Resources/fps_images-hd.png"; sourceTree = "<group>"; };
@@ -557,7 +555,6 @@
 				4CEA953E161F3F6500CDC25C /* arrowup.png */,
 				4CEA953F161F3F6500CDC25C /* test.png */,
 				4CEA9540161F3F6500CDC25C /* arrowright.png */,
-				4C0AF443161F31FC00B6E3AA /* Default.png */,
 				4C0AF445161F31FC00B6E3AA /* Default-Landscape~ipad.png */,
 				4C0AF447161F31FC00B6E3AA /* fps_images.png */,
 				4C0AF449161F31FC00B6E3AA /* fps_images-hd.png */,
@@ -967,7 +964,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C0AF444161F31FC00B6E3AA /* Default.png in Resources */,
 				4C0AF446161F31FC00B6E3AA /* Default-Landscape~ipad.png in Resources */,
 				4C0AF448161F31FC00B6E3AA /* fps_images.png in Resources */,
 				4C0AF44A161F31FC00B6E3AA /* fps_images-hd.png in Resources */,
