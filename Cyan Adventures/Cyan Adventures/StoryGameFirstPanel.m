@@ -71,7 +71,7 @@
         [self reorderChild:_enemy z:3];
         
         //Setting Up Arrow Buttons
-        CCSprite *rightarrow2 = [CCSprite spriteWithFile:@"arrowright.png"];
+        CCSprite *rightarrow2 = [CCSprite spriteWithFile:@"arrow-right.png"];
         [rightarrow2 setPosition:ccp(size.width - 20,size.height/2)];
         [self addChild:rightarrow2];
         float w = [rightarrow2 contentSize].width;
@@ -80,7 +80,7 @@
         spRectR2 = CGRectMake(aPoint.x, aPoint.y, w, h);
         [self reorderChild:rightarrow2 z:3];
         
-        CCSprite *leftarrow2 = [CCSprite spriteWithFile:@"arrowleft.png"];
+        CCSprite *leftarrow2 = [CCSprite spriteWithFile:@"arrow-left.png"];
         [leftarrow2 setPosition:ccp(20,size.height/2)];
         [self addChild:leftarrow2];
         float w3 = [leftarrow2 contentSize].width;

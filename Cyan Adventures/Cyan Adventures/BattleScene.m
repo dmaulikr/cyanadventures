@@ -64,37 +64,13 @@
         
         
         //Setting Up Arrow Buttons
-        CCSprite *rightarrow = [CCSprite spriteWithFile:@"arrowright.png"];
-        [rightarrow setPosition:ccp(size.width -20,20)];
-        [self addChild:rightarrow];
-        float w = [rightarrow contentSize].width;
-        float h = [rightarrow contentSize].height;
-        CGPoint aPoint = CGPointMake([rightarrow position].x - (w/2), [rightarrow position].y - (h/2));
-        spRectR = CGRectMake(aPoint.x, aPoint.y, w, h);
-        
-        CCSprite *uparrow = [CCSprite spriteWithFile:@"arrowup.png"];
-        [uparrow setPosition:ccp(size.width -80,20)];
-        [self addChild:uparrow];
-        float w2 = [uparrow contentSize].width;
-        float h2 = [uparrow contentSize].height;
-        CGPoint bPoint = CGPointMake([uparrow position].x - (w2/2), [uparrow position].y - (h2/2));
-        spRectU = CGRectMake(bPoint.x, bPoint.y, w2, h2);
-        
-        CCSprite *leftarrow = [CCSprite spriteWithFile:@"arrowleft.png"];
-        [leftarrow setPosition:ccp(size.width -140,20)];
-        [self addChild:leftarrow];
-        float w3 = [leftarrow contentSize].width;
-        float h3 = [leftarrow contentSize].height;
-        CGPoint cPoint = CGPointMake([leftarrow position].x - (w3/2), [leftarrow position].y - (h3/2));
-        spRectL = CGRectMake(cPoint.x, cPoint.y, w3, h3);
-        
-        CCSprite *downarrow = [CCSprite spriteWithFile:@"arrowdown.png"];
-        [downarrow setPosition:ccp(size.width -200,20)];
-        [self addChild:downarrow];
-        float w4 = [downarrow contentSize].width;
-        float h4 = [downarrow contentSize].height;
-        CGPoint dPoint = CGPointMake([downarrow position].x - (w4/2), [downarrow position].y - (h4/2));
-        spRectD = CGRectMake(dPoint.x, dPoint.y, w4, h4);
+        CCSprite *dpad = [CCSprite spriteWithFile:@"dpad.png"];
+        [dpad setPosition:ccp([dpad contentSize].width / 2,[dpad contentSize].height / 2)];
+        [self addChild:dpad];
+        spRectR = CGRectMake(90,45,45,45);
+        spRectD = CGRectMake(45,0,45,45);
+        spRectL = CGRectMake(0,45,45,45);
+        spRectU = CGRectMake(45,90,45,45);
         
         //Setting Up Scheduler
         [self schedule:@selector(playerMovement:) interval:0];
