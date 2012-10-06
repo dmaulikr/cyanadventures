@@ -59,7 +59,7 @@
         _player = [CCSprite spriteWithFile:@"stickfigure.png"];
         [_player setPosition:ccp(160,240)];
         [self addChild:_player];
-        //  Playermoving = 0;
+        Playermoving = 0;
         
         
         
@@ -174,6 +174,20 @@
     }
     if (Playermoving == 8){
         [_player setPosition:ccp(_player.position.x - 1,_player.position.y + 1)];
+    }
+    
+    //Screen Boundaries
+    if (_player.position.x <= 0 + ([_player contentSize].width / 2)){
+        [_player setPosition:ccp(0 + ([_player contentSize].width / 2),_player.position.y)];
+    }
+    if (_player.position.x >= 480 - ([_player contentSize].width / 2)){
+        [_player setPosition:ccp(480 - ([_player contentSize].width /2),_player.position.y)];
+    }
+    if (_player.position.y <= 0 + ([_player contentSize].height / 2)){
+        [_player setPosition:ccp(_player.position.x,0 + ([_player contentSize].height /2))];
+    }
+    if (_player.position.y >= 360){
+        [_player setPosition:ccp(_player.position.x,360)];
     }
 }
 
