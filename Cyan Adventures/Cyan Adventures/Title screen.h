@@ -11,7 +11,10 @@
 
 @interface Title_screen : CCLayer
 {
-    
+    CCSprite * background;
+    NSInteger backgroundanimationswitcher;
+    CCSprite * cloud;
+    CGRect menuChoice1;
 }
 
 +(id) scene;
