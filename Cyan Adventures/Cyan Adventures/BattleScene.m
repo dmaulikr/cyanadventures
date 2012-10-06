@@ -186,8 +186,8 @@
     if (_player.position.y <= 0 + ([_player contentSize].height / 2)){
         [_player setPosition:ccp(_player.position.x,0 + ([_player contentSize].height /2))];
     }
-    if (_player.position.y >= 360){
-        [_player setPosition:ccp(_player.position.x,360)];
+    if (_player.position.y >= 320 -([_player contentSize].height /2)){
+        [_player setPosition:ccp(_player.position.x,320 - ([_player contentSize].height /2))];
     }
 }
 
