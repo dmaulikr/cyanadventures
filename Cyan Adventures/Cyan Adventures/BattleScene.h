@@ -19,6 +19,10 @@
     CGRect spRectL;
     CGRect spRectU;
     CGRect spRectD;
+    CGRect spRectRU;
+    CGRect spRectRD;
+    CGRect spRectLU;
+    CGRect spRectLD;
     CCSprite * _player;
     NSInteger Playermoving;
 }

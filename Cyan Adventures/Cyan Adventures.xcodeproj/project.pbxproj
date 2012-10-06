@@ -133,6 +133,10 @@
 		4C0AF5C1161F31FE00B6E3AA /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0AF5C0161F31FE00B6E3AA /* IntroLayer.m */; };
 		4CE9AEAA1620600400EB4BB6 /* dpad-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CE9AEA81620600400EB4BB6 /* dpad-hd.png */; };
 		4CE9AEAB1620600400EB4BB6 /* dpad.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CE9AEA91620600400EB4BB6 /* dpad.png */; };
+		4CE9AEB016206BEB00EB4BB6 /* arrow-left-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CE9AEAC16206BEB00EB4BB6 /* arrow-left-hd.png */; };
+		4CE9AEB116206BEB00EB4BB6 /* arrow-left.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CE9AEAD16206BEB00EB4BB6 /* arrow-left.png */; };
+		4CE9AEB216206BEB00EB4BB6 /* arrow-right-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CE9AEAE16206BEB00EB4BB6 /* arrow-right-hd.png */; };
+		4CE9AEB316206BEB00EB4BB6 /* arrow-right.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CE9AEAF16206BEB00EB4BB6 /* arrow-right.png */; };
 		4CEA9532161F3E6A00CDC25C /* BattleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA9531161F3E6A00CDC25C /* BattleScene.m */; };
 		4CEA9541161F3F6500CDC25C /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA9538161F3F6500CDC25C /* loading.png */; };
 		4CEA9542161F3F6500CDC25C /* loading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA9539161F3F6500CDC25C /* loading@2x.png */; };
@@ -425,6 +429,10 @@
 		4C0AF5C0161F31FE00B6E3AA /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
 		4CE9AEA81620600400EB4BB6 /* dpad-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dpad-hd.png"; sourceTree = "<group>"; };
 		4CE9AEA91620600400EB4BB6 /* dpad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dpad.png; sourceTree = "<group>"; };
+		4CE9AEAC16206BEB00EB4BB6 /* arrow-left-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-left-hd.png"; sourceTree = "<group>"; };
+		4CE9AEAD16206BEB00EB4BB6 /* arrow-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-left.png"; sourceTree = "<group>"; };
+		4CE9AEAE16206BEB00EB4BB6 /* arrow-right-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-right-hd.png"; sourceTree = "<group>"; };
+		4CE9AEAF16206BEB00EB4BB6 /* arrow-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-right.png"; sourceTree = "<group>"; };
 		4CEA9530161F3E6A00CDC25C /* BattleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleScene.h; sourceTree = "<group>"; };
 		4CEA9531161F3E6A00CDC25C /* BattleScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleScene.m; sourceTree = "<group>"; };
 		4CEA9538161F3F6500CDC25C /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
@@ -546,6 +554,10 @@
 		4C0AF442161F31FC00B6E3AA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4CE9AEAC16206BEB00EB4BB6 /* arrow-left-hd.png */,
+				4CE9AEAD16206BEB00EB4BB6 /* arrow-left.png */,
+				4CE9AEAE16206BEB00EB4BB6 /* arrow-right-hd.png */,
+				4CE9AEAF16206BEB00EB4BB6 /* arrow-right.png */,
 				E068FFCC161F7F8D0007D14A /* stickfigureenemy-hd.png */,
 				E068FFCD161F7F8D0007D14A /* stickfigureenemy.png */,
 				E068FFC5161F75D20007D14A /* nicepicture-hd.png */,
@@ -1009,6 +1021,10 @@
 				E068FFCF161F7F8D0007D14A /* stickfigureenemy.png in Resources */,
 				4CE9AEAA1620600400EB4BB6 /* dpad-hd.png in Resources */,
 				4CE9AEAB1620600400EB4BB6 /* dpad.png in Resources */,
+				4CE9AEB016206BEB00EB4BB6 /* arrow-left-hd.png in Resources */,
+				4CE9AEB116206BEB00EB4BB6 /* arrow-left.png in Resources */,
+				4CE9AEB216206BEB00EB4BB6 /* arrow-right-hd.png in Resources */,
+				4CE9AEB316206BEB00EB4BB6 /* arrow-right.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

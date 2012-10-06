@@ -71,6 +71,10 @@
         spRectD = CGRectMake(45,0,45,45);
         spRectL = CGRectMake(0,45,45,45);
         spRectU = CGRectMake(45,90,45,45);
+        spRectRD = CGRectMake(90,0,45,45);
+        spRectRU = CGRectMake(90,90,45,45);
+        spRectLD = CGRectMake(0,0,45,45);
+        spRectLU = CGRectMake(0,90,45,45);
         
         //Setting Up Scheduler
         [self schedule:@selector(playerMovement:) interval:0];
@@ -88,16 +92,28 @@
     location = [[CCDirector sharedDirector] convertToGL:location];
     
     if (CGRectContainsPoint(spRectR, location)) {
-        Playermoving = 4;
-    }
-    if (CGRectContainsPoint(spRectL, location)) {
-        Playermoving = 3;
-    }
-    if (CGRectContainsPoint(spRectU, location)) {
         Playermoving = 2;
     }
-    if (CGRectContainsPoint(spRectD, location)) {
+    if (CGRectContainsPoint(spRectL, location)) {
+        Playermoving = 4;
+    }
+    if (CGRectContainsPoint(spRectU, location)) {
         Playermoving = 1;
+    }
+    if (CGRectContainsPoint(spRectD, location)) {
+        Playermoving = 3;
+    }
+    if (CGRectContainsPoint(spRectRU, location)) {
+        Playermoving = 5;
+    }
+    if (CGRectContainsPoint(spRectRD, location)) {
+        Playermoving = 6;
+    }
+    if (CGRectContainsPoint(spRectLD, location)) {
+        Playermoving = 7;
+    }
+    if (CGRectContainsPoint(spRectLU, location)) {
+        Playermoving = 8;
     }
 }
 
@@ -119,21 +135,45 @@
     if (CGRectContainsPoint(spRectD, location)) {
         Playermoving = 0;
     }
+    if (CGRectContainsPoint(spRectRU, location)) {
+        Playermoving = 0;
+    }
+    if (CGRectContainsPoint(spRectRD, location)) {
+        Playermoving = 0;
+    }
+    if (CGRectContainsPoint(spRectLD, location)) {
+        Playermoving = 0;
+    }
+    if (CGRectContainsPoint(spRectLU, location)) {
+        Playermoving = 0;
+    }
 }
 
 - (void)playerMovement: (ccTime) dt
 {
     if (Playermoving == 1){
-        [_player setPosition:ccp(_player.position.x,_player.position.y - 1)];
-    }
-    if (Playermoving == 2){
         [_player setPosition:ccp(_player.position.x,_player.position.y + 1)];
     }
+    if (Playermoving == 2){
+        [_player setPosition:ccp(_player.position.x + 1,_player.position.y)];
+    }
     if (Playermoving == 3){
-        [_player setPosition:ccp(_player.position.x - 1,_player.position.y)];
+        [_player setPosition:ccp(_player.position.x,_player.position.y - 1)];
     }
     if (Playermoving == 4){
-        [_player setPosition:ccp(_player.position.x + 1,_player.position.y)];
+        [_player setPosition:ccp(_player.position.x - 1,_player.position.y)];
+    }
+    if (Playermoving == 5){
+        [_player setPosition:ccp(_player.position.x + 1,_player.position.y + 1)];
+    }
+    if (Playermoving == 6){
+        [_player setPosition:ccp(_player.position.x + 1,_player.position.y - 1)];
+    }
+    if (Playermoving == 7){
+        [_player setPosition:ccp(_player.position.x - 1,_player.position.y - 1)];
+    }
+    if (Playermoving == 8){
+        [_player setPosition:ccp(_player.position.x - 1,_player.position.y + 1)];
     }
 }
 
@@ -145,19 +185,35 @@
     location = [[CCDirector sharedDirector] convertToGL:location];
     int Playerstillmoving = 0;
     if (CGRectContainsPoint(spRectR, location)) {
-        Playermoving = 4;
-        Playerstillmoving = 1;
-    }
-    if (CGRectContainsPoint(spRectL, location)) {
-        Playermoving = 3;
-        Playerstillmoving = 1;
-    }
-    if (CGRectContainsPoint(spRectU, location)) {
         Playermoving = 2;
         Playerstillmoving = 1;
     }
-    if (CGRectContainsPoint(spRectD, location)) {
+    if (CGRectContainsPoint(spRectL, location)) {
+        Playermoving = 4;
+        Playerstillmoving = 1;
+    }
+    if (CGRectContainsPoint(spRectU, location)) {
         Playermoving = 1;
+        Playerstillmoving = 1;
+    }
+    if (CGRectContainsPoint(spRectD, location)) {
+        Playermoving = 3;
+        Playerstillmoving = 1;
+    }
+    if (CGRectContainsPoint(spRectRU, location)) {
+        Playermoving = 5;
+        Playerstillmoving = 1;
+    }
+    if (CGRectContainsPoint(spRectRD, location)) {
+        Playermoving = 6;
+        Playerstillmoving = 1;
+    }
+    if (CGRectContainsPoint(spRectLD, location)) {
+        Playermoving = 7;
+        Playerstillmoving = 1;
+    }
+    if (CGRectContainsPoint(spRectLU, location)) {
+        Playermoving = 8;
         Playerstillmoving = 1;
     }
     if (Playerstillmoving == 0)
