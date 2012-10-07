@@ -69,7 +69,9 @@
       //
       //  [menuLayer addChild: menu];
       //  [menu alignItemsVertically];
-        [self setIsTouchEnabled:TRUE];    }
+        [self setIsTouchEnabled:TRUE];
+
+    }
     return self;
 }
 

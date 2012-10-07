@@ -56,10 +56,12 @@
 	
 	// In one second transition to the new scene
 	[self scheduleOnce:@selector(makeTransition:) delay:1];
+    [[CCDirector sharedDirector] setDisplayFPS:NO];    
 }
 
 -(void) makeTransition:(ccTime)dt
 {
 	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[Title_screen scene] withColor:ccWHITE]];
 }
+
 @end

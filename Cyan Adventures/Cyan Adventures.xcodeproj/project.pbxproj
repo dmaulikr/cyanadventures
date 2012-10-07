@@ -169,6 +169,10 @@
 		E068FFCB161F77450007D14A /* StoryGameFirstPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = E068FFCA161F77440007D14A /* StoryGameFirstPanel.m */; };
 		E068FFCE161F7F8D0007D14A /* stickfigureenemy-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E068FFCC161F7F8D0007D14A /* stickfigureenemy-hd.png */; };
 		E068FFCF161F7F8D0007D14A /* stickfigureenemy.png in Resources */ = {isa = PBXBuildFile; fileRef = E068FFCD161F7F8D0007D14A /* stickfigureenemy.png */; };
+		E08792E01620E3A100574E8D /* tempinventorybutton-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E08792DE1620E3A100574E8D /* tempinventorybutton-hd.png */; };
+		E08792E11620E3A100574E8D /* tempinventorybutton.png in Resources */ = {isa = PBXBuildFile; fileRef = E08792DF1620E3A100574E8D /* tempinventorybutton.png */; };
+		E0D945691620E417004433B9 /* inventorybutton-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E0D945671620E417004433B9 /* inventorybutton-hd.png */; };
+		E0D9456A1620E417004433B9 /* inventorybutton.png in Resources */ = {isa = PBXBuildFile; fileRef = E0D945681620E417004433B9 /* inventorybutton.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -472,6 +476,10 @@
 		E068FFCA161F77440007D14A /* StoryGameFirstPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryGameFirstPanel.m; sourceTree = "<group>"; };
 		E068FFCC161F7F8D0007D14A /* stickfigureenemy-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stickfigureenemy-hd.png"; sourceTree = "<group>"; };
 		E068FFCD161F7F8D0007D14A /* stickfigureenemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickfigureenemy.png; sourceTree = "<group>"; };
+		E08792DE1620E3A100574E8D /* tempinventorybutton-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tempinventorybutton-hd.png"; sourceTree = "<group>"; };
+		E08792DF1620E3A100574E8D /* tempinventorybutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tempinventorybutton.png; sourceTree = "<group>"; };
+		E0D945671620E417004433B9 /* inventorybutton-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "inventorybutton-hd.png"; path = "Resources/inventorybutton-hd.png"; sourceTree = "<group>"; };
+		E0D945681620E417004433B9 /* inventorybutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = inventorybutton.png; path = Resources/inventorybutton.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -562,6 +570,10 @@
 		4C0AF442161F31FC00B6E3AA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E0D945671620E417004433B9 /* inventorybutton-hd.png */,
+				E0D945681620E417004433B9 /* inventorybutton.png */,
+				E08792DE1620E3A100574E8D /* tempinventorybutton-hd.png */,
+				E08792DF1620E3A100574E8D /* tempinventorybutton.png */,
 				4C31518E1620C58900CCD894 /* cloud-hd.png */,
 				4C31518F1620C58900CCD894 /* cloud.png */,
 				4C31518A1620B78B00CCD894 /* menubackground-hd.png */,
@@ -1041,6 +1053,10 @@
 				4C31518D1620B78B00CCD894 /* menubackground.png in Resources */,
 				4C3151901620C58900CCD894 /* cloud-hd.png in Resources */,
 				4C3151911620C58900CCD894 /* cloud.png in Resources */,
+				E08792E01620E3A100574E8D /* tempinventorybutton-hd.png in Resources */,
+				E08792E11620E3A100574E8D /* tempinventorybutton.png in Resources */,
+				E0D945691620E417004433B9 /* inventorybutton-hd.png in Resources */,
+				E0D9456A1620E417004433B9 /* inventorybutton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

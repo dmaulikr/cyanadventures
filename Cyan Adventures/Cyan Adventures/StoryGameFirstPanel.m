@@ -18,7 +18,7 @@
 {
 	// 'scene' is an autorelease object.
 	CCScene *scene = [CCScene node];
-	
+    
 	// 'layer' is an autorelease object.
 	StoryGameFirstPanel *layer = [StoryGameFirstPanel node];
 	
@@ -59,7 +59,7 @@
 		
         [self setIsTouchEnabled:TRUE];
         
-        CGSize size = [[CCDirector sharedDirector] winSize];     
+        CGSize size = [[CCDirector sharedDirector] winSize];
         
         _enemy = [CCSprite spriteWithFile:@"stickfigureenemy.png"];
         [_enemy setPosition:ccp(160,70)];
@@ -68,7 +68,7 @@
         float h2 = [_enemy contentSize].height;
         CGPoint bPoint = CGPointMake([_enemy position].x - (w2/2), [_enemy position].y - (h2/2));
         spRect = CGRectMake(bPoint.x, bPoint.y, w2, h2);
-        [self reorderChild:_enemy z:3];
+        [self reorderChild:_enemy z:2];
         
         //Setting Up Arrow Buttons
         CCSprite *rightarrow2 = [CCSprite spriteWithFile:@"arrow-right.png"];
@@ -78,7 +78,7 @@
         float h = [rightarrow2 contentSize].height;
         CGPoint aPoint = CGPointMake([rightarrow2 position].x - (w/2), [rightarrow2 position].y - (h/2));
         spRectR2 = CGRectMake(aPoint.x, aPoint.y, w, h);
-        [self reorderChild:rightarrow2 z:3];
+        [self reorderChild:rightarrow2 z:2];
         
         CCSprite *leftarrow2 = [CCSprite spriteWithFile:@"arrow-left.png"];
         [leftarrow2 setPosition:ccp(20,size.height/2)];
@@ -87,7 +87,25 @@
         float h3 = [leftarrow2 contentSize].height;
         CGPoint cPoint = CGPointMake([leftarrow2 position].x - (w3/2), [leftarrow2 position].y - (h3/2));
         spRectL2 = CGRectMake(cPoint.x, cPoint.y, w3, h3);
-        [self reorderChild:leftarrow2 z:3];
+        [self reorderChild:leftarrow2 z:2];
+        
+        CCSprite *inventory = [CCSprite spriteWithFile:@"inventorybutton.png"];
+        [inventory setPosition:ccp(40,40)];
+        [self addChild:inventory];
+        float w4 = [inventory contentSize].width;
+        float h4 = [inventory contentSize].height;
+        CGPoint dPoint = CGPointMake([inventory position].x - (w4/2), [inventory position].y - (h4/2));
+        spBag = CGRectMake(dPoint.x, dPoint.y, w4, h4);
+        [self reorderChild:inventory z:2];
+        
+        CCLayer *inventoryLayer = [[CCLayer alloc] init];
+        [self addChild:inventoryLayer];
+        [self reorderChild: inventoryLayer z:1];
+        
+        CCSprite *logo = [CCSprite spriteWithFile:@"logo.png"];
+        [logo setPosition:ccp(80,80)];
+        [inventoryLayer addChild:logo];
+        
         
 	}
 	return self;
@@ -107,8 +125,11 @@
         
     }
     if (CGRectContainsPoint(spRect, location)) {
-        [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[BattleScene scene] withColor:ccRED]];    }
-
+        [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.5 scene:[BattleScene scene] withColor:ccRED]];
+    }
+    if (CGRectContainsPoint(spBag, location)) {
+        [self reorderChild: inventoryLayer z:4];
+    }
 }
 
 - (void)ccTouchesEnded:(UITouch *)touches withEvent:(UIEvent *)event;
@@ -125,6 +146,7 @@
     }
 
 }
+
 
 - (void) dealloc
 {
