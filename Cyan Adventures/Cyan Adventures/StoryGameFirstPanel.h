@@ -17,7 +17,6 @@
     CGRect spRect;
     CGRect spBag;
     CCSprite * _enemy;
-    int toggle;
     }
 
 +(CCScene *) scene;

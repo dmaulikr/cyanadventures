@@ -19,11 +19,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Cyan Adventures/StoryGameFirstPanel.h"
-         timestampString = "371335027.872895"
+         timestampString = "371335762.287513"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "20"
-         endingLineNumber = "20"
+         startingLineNumber = "19"
+         endingLineNumber = "19"
          landmarkName = "@interface StoryGameFirstPanel"
          landmarkType = "2">
       </FileBreakpoint>

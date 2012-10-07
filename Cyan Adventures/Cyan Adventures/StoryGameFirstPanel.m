@@ -98,15 +98,6 @@
         spBag = CGRectMake(dPoint.x, dPoint.y, w4, h4);
         [self reorderChild:inventory z:2];
         
-        CCLayer *inventoryLayer = [[CCLayer alloc] init];
-        [self addChild:inventoryLayer];
-        [self reorderChild: inventoryLayer z:1];
-        
-        CCSprite *logo = [CCSprite spriteWithFile:@"logo.png"];
-        [logo setPosition:ccp(80,80)];
-        [inventoryLayer addChild:logo];
-        
-        
 	}
 	return self;
 }
@@ -124,11 +115,8 @@
     if (CGRectContainsPoint(spRectL2, location)) {
         
     }
-    if (CGRectContainsPoint(spRect, location)) {
-        [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.5 scene:[BattleScene scene] withColor:ccRED]];
-    }
     if (CGRectContainsPoint(spBag, location)) {
-        [self reorderChild: inventoryLayer z:4];
+        
     }
 }
 
@@ -138,11 +126,9 @@
     CGPoint location = [touch locationInView:[touch view]];
     
     location = [[CCDirector sharedDirector] convertToGL:location];
-    if (CGRectContainsPoint(spRectR2, location)) {
-        
-    }
-    if (CGRectContainsPoint(spRectL2, location)) {
-       
+    
+    if (CGRectContainsPoint(spRect, location)) {
+        [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.5 scene:[BattleScene scene] withColor:ccRED]];
     }
 
 }

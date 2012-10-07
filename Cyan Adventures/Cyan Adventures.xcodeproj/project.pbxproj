@@ -171,6 +171,7 @@
 		E068FFCF161F7F8D0007D14A /* stickfigureenemy.png in Resources */ = {isa = PBXBuildFile; fileRef = E068FFCD161F7F8D0007D14A /* stickfigureenemy.png */; };
 		E08792E01620E3A100574E8D /* tempinventorybutton-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E08792DE1620E3A100574E8D /* tempinventorybutton-hd.png */; };
 		E08792E11620E3A100574E8D /* tempinventorybutton.png in Resources */ = {isa = PBXBuildFile; fileRef = E08792DF1620E3A100574E8D /* tempinventorybutton.png */; };
+		E08ABBB8162227350027A294 /* statsandinventory.m in Sources */ = {isa = PBXBuildFile; fileRef = E08ABBB7162227350027A294 /* statsandinventory.m */; };
 		E0D945691620E417004433B9 /* inventorybutton-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E0D945671620E417004433B9 /* inventorybutton-hd.png */; };
 		E0D9456A1620E417004433B9 /* inventorybutton.png in Resources */ = {isa = PBXBuildFile; fileRef = E0D945681620E417004433B9 /* inventorybutton.png */; };
 /* End PBXBuildFile section */
@@ -478,6 +479,8 @@
 		E068FFCD161F7F8D0007D14A /* stickfigureenemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickfigureenemy.png; sourceTree = "<group>"; };
 		E08792DE1620E3A100574E8D /* tempinventorybutton-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tempinventorybutton-hd.png"; sourceTree = "<group>"; };
 		E08792DF1620E3A100574E8D /* tempinventorybutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tempinventorybutton.png; sourceTree = "<group>"; };
+		E08ABBB6162227350027A294 /* statsandinventory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = statsandinventory.h; sourceTree = SOURCE_ROOT; };
+		E08ABBB7162227350027A294 /* statsandinventory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = statsandinventory.m; sourceTree = SOURCE_ROOT; };
 		E0D945671620E417004433B9 /* inventorybutton-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "inventorybutton-hd.png"; path = "Resources/inventorybutton-hd.png"; sourceTree = "<group>"; };
 		E0D945681620E417004433B9 /* inventorybutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = inventorybutton.png; path = Resources/inventorybutton.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -542,6 +545,12 @@
 		4C0AF441161F31FC00B6E3AA /* Cyan Adventures */ = {
 			isa = PBXGroup;
 			children = (
+				E068FFC9161F77440007D14A /* StoryGameFirstPanel.h */,
+				E068FFCA161F77440007D14A /* StoryGameFirstPanel.m */,
+				4CEA9557161F3FA600CDC25C /* Title screen.h */,
+				4CEA9558161F3FA600CDC25C /* Title screen.m */,
+				E08ABBB6162227350027A294 /* statsandinventory.h */,
+				E08ABBB7162227350027A294 /* statsandinventory.m */,
 				4C0AF5B9161F31FE00B6E3AA /* AppDelegate.h */,
 				4C0AF5BA161F31FE00B6E3AA /* AppDelegate.m */,
 				4CEA9530161F3E6A00CDC25C /* BattleScene.h */,
@@ -558,11 +567,7 @@
 				4CEA954B161F3F8900CDC25C /* mythirdbutton.png */,
 				4CEA954F161F3F8900CDC25C /* mythirdbutton_selected.png */,
 				4C0AF442161F31FC00B6E3AA /* Resources */,
-				E068FFC9161F77440007D14A /* StoryGameFirstPanel.h */,
-				E068FFCA161F77440007D14A /* StoryGameFirstPanel.m */,
 				4C0AF5B5161F31FE00B6E3AA /* Supporting Files */,
-				4CEA9557161F3FA600CDC25C /* Title screen.h */,
-				4CEA9558161F3FA600CDC25C /* Title screen.m */,
 			);
 			path = "Cyan Adventures";
 			sourceTree = "<group>";
@@ -1173,6 +1178,7 @@
 				4CEA9532161F3E6A00CDC25C /* BattleScene.m in Sources */,
 				4CEA9559161F3FA600CDC25C /* Title screen.m in Sources */,
 				E068FFCB161F77450007D14A /* StoryGameFirstPanel.m in Sources */,
+				E08ABBB8162227350027A294 /* statsandinventory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
