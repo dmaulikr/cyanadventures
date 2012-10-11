@@ -23,8 +23,17 @@
     CGRect spRectRD;
     CGRect spRectLU;
     CGRect spRectLD;
+    CGRect spRectBB;
+    CGRect spRectRB;
     CCSprite * _player;
+    CCSprite * bluebutton;
+    CCSprite * redbutton;
     NSInteger Playermoving;
+    NSInteger ButtonPressed;
+    NSInteger ButtonPressLife;
+    NSInteger Flame;
+    CCSprite * flame;
+    NSInteger Spellcountdown;
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child

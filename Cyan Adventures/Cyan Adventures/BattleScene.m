@@ -76,6 +76,16 @@
         spRectLD = CGRectMake(0,0,45,45);
         spRectLU = CGRectMake(0,90,45,45);
         
+        //Setting Up Buttons
+        bluebutton = [CCSprite spriteWithFile:@"bluebutton.png"];
+        [bluebutton setPosition:ccp((size.width - 140) - [bluebutton contentSize].width/2, 10 + [bluebutton contentSize].height /2)];
+        [self addChild:bluebutton];
+        spRectBB = CGRectMake(bluebutton.position.x -([bluebutton contentSize].width / 2),bluebutton.position.y - ([bluebutton contentSize].height / 2),[bluebutton contentSize].width, [bluebutton contentSize].height );
+        
+        redbutton = [CCSprite spriteWithFile:@"redbutton.png"];
+        [redbutton setPosition:ccp((size.width - 70) - [redbutton contentSize].width/2, 20 + [redbutton contentSize].height /2)];
+        [self addChild:redbutton];
+        
         //Setting Up Scheduler
         [self schedule:@selector(playerMovement:) interval:0];
         
@@ -115,6 +125,11 @@
     if (CGRectContainsPoint(spRectLU, location)) {
         Playermoving = 8;
     }
+    if (CGRectContainsPoint(spRectBB, location)) {
+        if (ButtonPressLife == 0){
+        ButtonPressed = 1;
+        }
+    }
 }
 
 - (void)ccTouchesEnded:(UITouch *)touches withEvent:(UIEvent *)event;
@@ -151,6 +166,7 @@
 
 - (void)playerMovement: (ccTime) dt
 {
+    //MovementControls
     if (Playermoving == 1){
         [_player setPosition:ccp(_player.position.x,_player.position.y + 1)];
     }
@@ -189,6 +205,50 @@
     if (_player.position.y >= 320 -([_player contentSize].height /2)){
         [_player setPosition:ccp(_player.position.x,320 - ([_player contentSize].height /2))];
     }
+    
+    //BattleControls
+    if (Playermoving ==0){
+        int ButtonLifeEnd = 0;
+        if (ButtonPressed == 1) {
+            if (ButtonPressLife == 0){
+                [_player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"stickfigure2.png"]];
+            }
+            if (ButtonPressLife == 5){
+                [_player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"stickfigure3.png"]];
+                Flame = 1;
+            }
+            if (ButtonPressLife == 10){
+                [_player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"stickfigure2.png"]];
+            }
+            if (ButtonPressLife == 15){
+                                [_player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"stickfigure.png"]];
+                ButtonLifeEnd = 1;
+            }
+            ButtonPressLife = ButtonPressLife + 1;
+            if (ButtonLifeEnd == 1){
+                ButtonPressLife = 0;
+                ButtonPressed = 0;
+            }
+        }
+    }
+    
+    //Flame
+    if (Flame == 1){
+        if (Spellcountdown == 0){
+            flame = [CCSprite spriteWithFile:(@"flame.png")];
+            [flame setPosition:ccp(_player.position.x + 60, _player.position.y)];
+            [self addChild: flame];
+            Spellcountdown = 10;
+        }
+        if (Spellcountdown >= 1){
+            Spellcountdown = Spellcountdown - 1;
+        }
+        if (Spellcountdown == 0) {
+            [flame removeFromParentAndCleanup:TRUE];
+            Flame = 0;
+        }
+    }
+    
 }
 
 - (void)ccTouchesMoved:(UITouch *)touches withEvent:(UIEvent *)event;
