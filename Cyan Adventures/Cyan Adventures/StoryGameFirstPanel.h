@@ -8,6 +8,7 @@
 
 #import "CCLayer.h"
 #import "cocos2d.h"
+#import "statsandinventory.h"
 
 @interface StoryGameFirstPanel : CCLayer
 {
@@ -15,9 +16,10 @@
     CGRect spRectR2;
     CGRect spRectL2;
     CGRect spRect;
-    CGRect spBag;
     CCSprite * _enemy;
+    statsandinventory *_inv;
     }
 
+-(id)initWithHUD:(statsandinventory *) inv;
 +(CCScene *) scene;
 @end

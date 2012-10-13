@@ -9,6 +9,7 @@
 #import "StoryGameFirstPanel.h"
 #import "BattleScene.h"
 #import "CCTouchDispatcher.h"
+#import "statsandinventory.h"
 
 #pragma mark - StoryGameFirstPanel
 
@@ -16,15 +17,21 @@
 
 +(CCScene *) scene
 {
-	// 'scene' is an autorelease object.
+    	
+    // 'scene' is an autorelease object.
 	CCScene *scene = [CCScene node];
     
+    statsandinventory *inv = [statsandinventory node];
+    [scene addChild:inv z:3];
+    
 	// 'layer' is an autorelease object.
-	StoryGameFirstPanel *layer = [StoryGameFirstPanel node];
+	StoryGameFirstPanel *layer = [[[StoryGameFirstPanel alloc] initWithHUD:inv] autorelease];
 	
 	// add layer as a child to scene
 	[scene addChild: layer];
-	
+    
+
+    
 	// return the scene
 	return scene;
 }
@@ -48,15 +55,18 @@
     
 	// add the label as a child to this Layer
 	[self addChild: background];
-    
+    [self reorderChild: background z:1];
 }
 
--(id) init
+
+
+-(id) initWithHUD:(statsandinventory *) inv
 {
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super's" return value
 	if( (self=[super init]) ) {
-		
+        _inv = inv;
+        
         [self setIsTouchEnabled:TRUE];
         
         CGSize size = [[CCDirector sharedDirector] winSize];
@@ -88,16 +98,6 @@
         CGPoint cPoint = CGPointMake([leftarrow2 position].x - (w3/2), [leftarrow2 position].y - (h3/2));
         spRectL2 = CGRectMake(cPoint.x, cPoint.y, w3, h3);
         [self reorderChild:leftarrow2 z:2];
-        
-        CCSprite *inventory = [CCSprite spriteWithFile:@"inventorybutton.png"];
-        [inventory setPosition:ccp(40,40)];
-        [self addChild:inventory];
-        float w4 = [inventory contentSize].width;
-        float h4 = [inventory contentSize].height;
-        CGPoint dPoint = CGPointMake([inventory position].x - (w4/2), [inventory position].y - (h4/2));
-        spBag = CGRectMake(dPoint.x, dPoint.y, w4, h4);
-        [self reorderChild:inventory z:2];
-        
 	}
 	return self;
 }
@@ -115,9 +115,6 @@
     if (CGRectContainsPoint(spRectL2, location)) {
         
     }
-    if (CGRectContainsPoint(spBag, location)) {
-        
-    }
 }
 
 - (void)ccTouchesEnded:(UITouch *)touches withEvent:(UIEvent *)event;
@@ -128,9 +125,8 @@
     location = [[CCDirector sharedDirector] convertToGL:location];
     
     if (CGRectContainsPoint(spRect, location)) {
-        [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.5 scene:[BattleScene scene] withColor:ccRED]];
+            [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.5 scene:[BattleScene scene] withColor:ccRED]];
     }
-
 }
 
 

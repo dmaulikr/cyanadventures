@@ -19,7 +19,12 @@
     float critchance;
     int armour;
     int gold;
+    int invopen;
+    CGRect spBag;
+    CCSprite *inventory;
+    CCSprite *test;
 }
 
-+(CCScene *) scene;
+@property (readwrite) int invopen;
+
 @end
