@@ -57,12 +57,17 @@
         
         //Creating Player Sprite
         _player = [CCSprite spriteWithFile:@"stickfigure.png"];
-        [_player setPosition:ccp(160,240)];
+        [_player setPosition:ccp(160,120 + (_player.contentSize.height / 2))];
         [self addChild:_player];
         Playermoving = 0;
+        flameanimation1 = [[CCTextureCache sharedTextureCache] addImage:@"stickfigure2.png"];
+        flameanimation2 = [[CCTextureCache sharedTextureCache] addImage:@"stickfigure3.png"];
+        stationary = [[CCTextureCache sharedTextureCache] addImage:@"stickfigure.png"];
+        ducking = [[CCTextureCache sharedTextureCache] addImage:@"stickfigureducking.png"];
         
+       
         
-        
+    
         //Setting Up Arrow Buttons
         CCSprite *dpad = [CCSprite spriteWithFile:@"dpad.png"];
         [dpad setPosition:ccp([dpad contentSize].width / 2,[dpad contentSize].height / 2)];
@@ -112,6 +117,7 @@
     }
     if (CGRectContainsPoint(spRectD, location)) {
         Playermoving = 3;
+        Playerducking = 1;
     }
     if (CGRectContainsPoint(spRectRU, location)) {
         Playermoving = 5;
@@ -128,6 +134,11 @@
     if (CGRectContainsPoint(spRectBB, location)) {
         if (ButtonPressLife == 0){
         ButtonPressed = 1;
+        }
+    }
+    if (CGRectContainsPoint(spRectRB, location)) {
+        if (ButtonPressLife == 0){
+            ButtonPressed = 2;
         }
     }
 }
@@ -149,6 +160,9 @@
     }
     if (CGRectContainsPoint(spRectD, location)) {
         Playermoving = 0;
+        Playerducking = 0;
+        [_player setTexture:stationary];
+        [_player setTextureRect:CGRectMake(0, 0, stationary.contentSize.width, stationary.contentSize.height)];
     }
     if (CGRectContainsPoint(spRectRU, location)) {
         Playermoving = 0;
@@ -166,30 +180,93 @@
 
 - (void)playerMovement: (ccTime) dt
 {
-    //MovementControls
-    if (Playermoving == 1){
-        [_player setPosition:ccp(_player.position.x,_player.position.y + 1)];
+    //PlayerControls
+    if ((Jumping == 0) && (SlidingL == 0) && (SlidingR == 0)){
+        if (Playermoving == 1){
+            Jumping = 1;
+        }
+        if (Playermoving == 2){
+            [_player setPosition:ccp(_player.position.x + 1,_player.position.y)];
+        }
+        if (Playermoving == 3){
+            [_player setTexture:ducking];
+            [_player setTextureRect:CGRectMake(0, 0, ducking.contentSize.width, ducking.contentSize.height)];
+            Playerducking = 1;
+        }
+        if (Playermoving == 4){
+            [_player setPosition:ccp(_player.position.x - 1,_player.position.y)];
+        }
+        if (Playermoving == 5){
+            Jumping = 1;
+            JumpingR = 1;
+        }
+        if (Playermoving == 6){
+            SlidingR = 1;
+        }
+        if (Playermoving == 7){
+            SlidingL = 1;
+        }
+        if (Playermoving == 8){
+            Jumping = 1;
+            JumpingL = 1;
+        }
     }
-    if (Playermoving == 2){
-        [_player setPosition:ccp(_player.position.x + 1,_player.position.y)];
+    
+    if (Jumping >0){
+        if (Jumping > 10){
+                        [_player setPosition:ccp(_player.position.x,_player.position.y - 3)];
+            Jumping = Jumping + 1;
+            if (JumpingL == 1){
+                        [_player setPosition:ccp(_player.position.x - 3,_player.position.y)];
+            }
+            if (JumpingR == 1){
+                [_player setPosition:ccp(_player.position.x + 3,_player.position.y)];
+            }
+        }
+        if (Jumping <=10){
+            Jumping = Jumping + 1;
+            [_player setPosition:ccp(_player.position.x,_player.position.y + 3)];
+            if (JumpingL == 1){
+                [_player setPosition:ccp(_player.position.x - 3,_player.position.y)];
+            }
+            if (JumpingR == 1){
+                [_player setPosition:ccp(_player.position.x + 3,_player.position.y)];
+            }
+        }
+        if (Jumping ==21){
+            Jumping = 0;
+            JumpingL = 0;
+            JumpingR = 0;
+        }
     }
-    if (Playermoving == 3){
-        [_player setPosition:ccp(_player.position.x,_player.position.y - 1)];
+    
+    if(SlidingL >= 1){
+        [_player setTexture:ducking];
+        [_player setTextureRect:CGRectMake(0, 0, ducking.contentSize.width, ducking.contentSize.height)];
+                        [_player setPosition:ccp(_player.position.x - 3,_player.position.y)];
+        if(SlidingL == 1){
+            _player.flipX = YES;
+        }
+        SlidingL = SlidingL + 1;
+        if (SlidingL == 10){
+            SlidingL = 0;
+            [_player setTexture:stationary];
+            [_player setTextureRect:CGRectMake(0, 0, stationary.contentSize.width, stationary.contentSize.height)];
+        }
     }
-    if (Playermoving == 4){
-        [_player setPosition:ccp(_player.position.x - 1,_player.position.y)];
-    }
-    if (Playermoving == 5){
-        [_player setPosition:ccp(_player.position.x + 1,_player.position.y + 1)];
-    }
-    if (Playermoving == 6){
-        [_player setPosition:ccp(_player.position.x + 1,_player.position.y - 1)];
-    }
-    if (Playermoving == 7){
-        [_player setPosition:ccp(_player.position.x - 1,_player.position.y - 1)];
-    }
-    if (Playermoving == 8){
-        [_player setPosition:ccp(_player.position.x - 1,_player.position.y + 1)];
+    if(SlidingR >= 1){
+        [_player setTexture:ducking];
+        [_player setTextureRect:CGRectMake(0, 0, ducking.contentSize.width, ducking.contentSize.height)];
+        [_player setPosition:ccp(_player.position.x + 3,_player.position.y)];
+        if(SlidingR == 1){
+            _player.flipX = NO;
+        }
+        SlidingR = SlidingR + 1;
+        if (SlidingR == 10){
+            SlidingR = 0;
+            [_player setTexture:stationary];
+            [_player setTextureRect:CGRectMake(0, 0, stationary.contentSize.width, stationary.contentSize.height)];
+        }
     }
     
     //Screen Boundaries
@@ -199,8 +276,8 @@
     if (_player.position.x >= 480 - ([_player contentSize].width / 2)){
         [_player setPosition:ccp(480 - ([_player contentSize].width /2),_player.position.y)];
     }
-    if (_player.position.y <= 0 + ([_player contentSize].height / 2)){
-        [_player setPosition:ccp(_player.position.x,0 + ([_player contentSize].height /2))];
+    if (_player.position.y <= 120 + ([_player contentSize].height / 2)){
+        [_player setPosition:ccp(_player.position.x,120 + ([_player contentSize].height /2))];
     }
     if (_player.position.y >= 320 -([_player contentSize].height /2)){
         [_player setPosition:ccp(_player.position.x,320 - ([_player contentSize].height /2))];
@@ -209,19 +286,24 @@
     //BattleControls
     if (Playermoving ==0){
         int ButtonLifeEnd = 0;
-        if (ButtonPressed == 1) {
+        if (ButtonPressed >= 1) {
             if (ButtonPressLife == 0){
-                [_player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"stickfigure2.png"]];
+                [_player setTexture:flameanimation1];
             }
             if (ButtonPressLife == 5){
-                [_player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"stickfigure3.png"]];
+                [_player setTexture:flameanimation2];
+                if (ButtonPressed == 1){
                 Flame = 1;
+                }
+                if (ButtonPressed == 2){
+                    Blizzardstorm = 1;
+                }
             }
             if (ButtonPressLife == 10){
-                [_player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"stickfigure2.png"]];
+                [_player setTexture:flameanimation1];
             }
             if (ButtonPressLife == 15){
-                                [_player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"stickfigure.png"]];
+                                [_player setTexture:stationary];
                 ButtonLifeEnd = 1;
             }
             ButtonPressLife = ButtonPressLife + 1;
@@ -249,6 +331,12 @@
         }
     }
     
+    if (Blizzardstorm == 1){
+        if (Spellcountdown == 0){
+            
+        }
+    }
+    
 }
 
 - (void)ccTouchesMoved:(UITouch *)touches withEvent:(UIEvent *)event;
@@ -273,6 +361,7 @@
     if (CGRectContainsPoint(spRectD, location)) {
         Playermoving = 3;
         Playerstillmoving = 1;
+        Playerducking = 1;
     }
     if (CGRectContainsPoint(spRectRU, location)) {
         Playermoving = 5;
@@ -293,6 +382,11 @@
     if (Playerstillmoving == 0)
     {
         Playermoving = 0;
+        Playerducking = 0;
+    }
+    if (Playerducking == 0){
+        [_player setTexture:stationary];
+        [_player setTextureRect:CGRectMake(0, 0, stationary.contentSize.width, stationary.contentSize.height)];
     }
 }
 

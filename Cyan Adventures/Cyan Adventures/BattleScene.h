@@ -14,7 +14,7 @@
 // HelloWorldLayer
 @interface BattleScene : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate>
 {
-    //Movement Controls
+    //Controls
     CGRect spRectR;
     CGRect spRectL;
     CGRect spRectU;
@@ -25,15 +25,34 @@
     CGRect spRectLD;
     CGRect spRectBB;
     CGRect spRectRB;
-    CCSprite * _player;
     CCSprite * bluebutton;
     CCSprite * redbutton;
-    NSInteger Playermoving;
-    NSInteger ButtonPressed;
-    NSInteger ButtonPressLife;
-    NSInteger Flame;
-    CCSprite * flame;
-    NSInteger Spellcountdown;
+    
+    //PLAYER STATS
+        //Sprites
+        CCSprite * _player;
+        CCSprite * flame;
+        CCSprite * blizzardstorm;
+    
+        //Integers
+        NSInteger Playermoving;
+        NSInteger ButtonPressed;
+        NSInteger ButtonPressLife;
+        NSInteger Flame;
+        NSInteger Blizzardstorm;
+        NSInteger Spellcountdown;
+        NSInteger Playerducking;
+        NSInteger Jumping;
+        NSInteger JumpingR;
+        NSInteger JumpingL;
+        NSInteger SlidingL;
+        NSInteger SlidingR;
+    
+    //Textures
+        CCTexture2D *flameanimation1;
+        CCTexture2D *flameanimation2;
+        CCTexture2D *stationary;
+        CCTexture2D *ducking;
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child
