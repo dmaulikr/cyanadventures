@@ -29,30 +29,36 @@
     CCSprite * redbutton;
     
     //PLAYER STATS
-        //Sprites
-        CCSprite * _player;
-        CCSprite * flame;
-        CCSprite * blizzardstorm;
+    //Sprites
+    CCSprite * _player;
+    CCSprite * flame;
+    CCSprite * blizzardstorm1;
+    CCSprite * blizzardstorm2;
+    CCSprite * blizzardstorm3;
+    CCSprite * blizzardstorm4;
+    CCSprite * blizzardstorm5;
+    CCSprite * blizzardstorm6;
     
-        //Integers
-        NSInteger Playermoving;
-        NSInteger ButtonPressed;
-        NSInteger ButtonPressLife;
-        NSInteger Flame;
-        NSInteger Blizzardstorm;
-        NSInteger Spellcountdown;
-        NSInteger Playerducking;
-        NSInteger Jumping;
-        NSInteger JumpingR;
-        NSInteger JumpingL;
-        NSInteger SlidingL;
-        NSInteger SlidingR;
+    //Integers
+    NSInteger Playermoving;
+    NSInteger ButtonPressed;
+    NSInteger ButtonPressLife;
+    NSInteger Flame;
+    NSInteger Blizzardstorm;
+    NSInteger Spellcountdown;
+    NSInteger Playerducking;
+    NSInteger Jumping;
+    NSInteger JumpingR;
+    NSInteger JumpingL;
+    NSInteger SlidingL;
+    NSInteger Test;
+    NSInteger SlidingR;
     
     //Textures
-        CCTexture2D *flameanimation1;
-        CCTexture2D *flameanimation2;
-        CCTexture2D *stationary;
-        CCTexture2D *ducking;
+    CCTexture2D *flameanimation1;
+    CCTexture2D *flameanimation2;
+    CCTexture2D *stationary;
+    CCTexture2D *ducking;
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child

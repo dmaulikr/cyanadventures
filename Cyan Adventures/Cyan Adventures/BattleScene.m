@@ -90,7 +90,7 @@
         redbutton = [CCSprite spriteWithFile:@"redbutton.png"];
         [redbutton setPosition:ccp((size.width - 70) - [redbutton contentSize].width/2, 20 + [redbutton contentSize].height /2)];
         [self addChild:redbutton];
-        
+        spRectRB = CGRectMake(redbutton.position.x -([redbutton contentSize].width / 2),redbutton.position.y - ([redbutton contentSize].height / 2),[redbutton contentSize].width, [redbutton contentSize].height );
         //Setting Up Scheduler
         [self schedule:@selector(playerMovement:) interval:0];
         
@@ -248,7 +248,7 @@
             _player.flipX = YES;
         }
         SlidingL = SlidingL + 1;
-        if (SlidingL == 10){
+        if (SlidingL == 30){
             SlidingL = 0;
             [_player setTexture:stationary];
             [_player setTextureRect:CGRectMake(0, 0, stationary.contentSize.width, stationary.contentSize.height)];
@@ -262,7 +262,7 @@
             _player.flipX = NO;
         }
         SlidingR = SlidingR + 1;
-        if (SlidingR == 10){
+        if (SlidingR == 30){
             SlidingR = 0;
             [_player setTexture:stationary];
             [_player setTextureRect:CGRectMake(0, 0, stationary.contentSize.width, stationary.contentSize.height)];
@@ -330,10 +330,53 @@
             Flame = 0;
         }
     }
-    
+    //Blizzard Storm
     if (Blizzardstorm == 1){
         if (Spellcountdown == 0){
-            
+            int i = 0;
+                blizzardstorm1 = [CCSprite spriteWithFile:(@"snow.png")];
+                [blizzardstorm1 setPosition:ccp(_player.position.x + (i), 320 - (blizzardstorm1.contentSize.height / 2))];
+                [self addChild: blizzardstorm1];
+            i = i + 40;
+            blizzardstorm2 = [CCSprite spriteWithFile:(@"snow.png")];
+            [blizzardstorm2 setPosition:ccp(_player.position.x + (i), 320 - (blizzardstorm2.contentSize.height / 2) + i)];
+            [self addChild: blizzardstorm2];
+            i = i + 40;
+            blizzardstorm3 = [CCSprite spriteWithFile:(@"snow.png")];
+            [blizzardstorm3 setPosition:ccp(_player.position.x + (i), 320 - (blizzardstorm3.contentSize.height / 2) + (i / 2))];
+            [self addChild: blizzardstorm3];
+            i = i + 40;
+            blizzardstorm4 = [CCSprite spriteWithFile:(@"snow.png")];
+            [blizzardstorm4 setPosition:ccp(_player.position.x + (i), 320 - (blizzardstorm4.contentSize.height / 2) + (i * 2))];
+            [self addChild: blizzardstorm4];
+            i = i + 40;
+            blizzardstorm5 = [CCSprite spriteWithFile:(@"snow.png")];
+            [blizzardstorm5 setPosition:ccp(_player.position.x + (i), 320 - (blizzardstorm5.contentSize.height / 2) + (i * 1.5))];
+            [self addChild: blizzardstorm5];
+            i = i + 40;
+            blizzardstorm6 = [CCSprite spriteWithFile:(@"snow.png")];
+            [blizzardstorm6 setPosition:ccp(_player.position.x + (i), 320 - (blizzardstorm6.contentSize.height / 2) + (i + 1))];
+            [self addChild: blizzardstorm6];
+            i = i + 40;
+                Spellcountdown = 50;
+        }
+        if (Spellcountdown >= 1){
+            [blizzardstorm1 setPosition:ccp(blizzardstorm1.position.x + 5, blizzardstorm1.position.y - 8 )];
+            [blizzardstorm2 setPosition:ccp(blizzardstorm2.position.x + 4, blizzardstorm2.position.y - 9 )];
+                        [blizzardstorm3 setPosition:ccp(blizzardstorm3.position.x + 10, blizzardstorm3.position.y - 8 )];
+                        [blizzardstorm4 setPosition:ccp(blizzardstorm4.position.x + 1, blizzardstorm4.position.y - 12 )];
+                        [blizzardstorm5 setPosition:ccp(blizzardstorm5.position.x + 7, blizzardstorm5.position.y - 10 )];
+                        [blizzardstorm6 setPosition:ccp(blizzardstorm6.position.x + 2, blizzardstorm6.position.y - 8 )];
+            Spellcountdown = Spellcountdown - 1;
+        }
+        if (Spellcountdown == 0) {
+            [blizzardstorm1 removeFromParentAndCleanup:TRUE];
+            [blizzardstorm2 removeFromParentAndCleanup:TRUE];
+            [blizzardstorm3 removeFromParentAndCleanup:TRUE];
+            [blizzardstorm4 removeFromParentAndCleanup:TRUE];
+            [blizzardstorm5 removeFromParentAndCleanup:TRUE];
+            [blizzardstorm6 removeFromParentAndCleanup:TRUE];
+            Blizzardstorm = 0;
         }
     }
     
