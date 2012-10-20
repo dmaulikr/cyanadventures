@@ -13,18 +13,25 @@
 {
     int hitpoints;
     int mana;
-    int might;
-    int cunning;
-    int wisdom;
+    int strength;
+    int dexterity;
+    int intelligence;
     float critchance;
     int armour;
     int gold;
     int invopen;
+    int statsopen;
+    CCArray *inventoryarray;
     CGRect spBag;
+    CGRect spStats;
     CCSprite *inventory;
+    CCSprite *statsbutton;
     CCSprite *test;
+    NSString *statstring;
+    CCLabelTTF *statlabel;
 }
 
 @property (readwrite) int invopen;
+@property (readwrite) int statsopen;
 
 @end

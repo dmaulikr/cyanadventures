@@ -179,6 +179,9 @@
 		E068FFCB161F77450007D14A /* StoryGameFirstPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = E068FFCA161F77440007D14A /* StoryGameFirstPanel.m */; };
 		E068FFCE161F7F8D0007D14A /* stickfigureenemy-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E068FFCC161F7F8D0007D14A /* stickfigureenemy-hd.png */; };
 		E068FFCF161F7F8D0007D14A /* stickfigureenemy.png in Resources */ = {isa = PBXBuildFile; fileRef = E068FFCD161F7F8D0007D14A /* stickfigureenemy.png */; };
+		E07FE6941631E4F8000C1E9F /* StoryGameSecondPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = E07FE6931631E4F8000C1E9F /* StoryGameSecondPanel.m */; };
+		E07FE6981631E4F8000C1E9F /* nicepicture2-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E07FE6961631E4F8000C1E9F /* nicepicture2-hd.png */; };
+		E07FE6991631E4F8000C1E9F /* nicepicture2.png in Resources */ = {isa = PBXBuildFile; fileRef = E07FE6971631E4F8000C1E9F /* nicepicture2.png */; };
 		E08792E01620E3A100574E8D /* tempinventorybutton-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E08792DE1620E3A100574E8D /* tempinventorybutton-hd.png */; };
 		E08792E11620E3A100574E8D /* tempinventorybutton.png in Resources */ = {isa = PBXBuildFile; fileRef = E08792DF1620E3A100574E8D /* tempinventorybutton.png */; };
 		E08ABBB8162227350027A294 /* statsandinventory.m in Sources */ = {isa = PBXBuildFile; fileRef = E08ABBB7162227350027A294 /* statsandinventory.m */; };
@@ -497,6 +500,10 @@
 		E068FFCA161F77440007D14A /* StoryGameFirstPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryGameFirstPanel.m; sourceTree = "<group>"; };
 		E068FFCC161F7F8D0007D14A /* stickfigureenemy-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stickfigureenemy-hd.png"; sourceTree = "<group>"; };
 		E068FFCD161F7F8D0007D14A /* stickfigureenemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickfigureenemy.png; sourceTree = "<group>"; };
+		E07FE6921631E4F8000C1E9F /* StoryGameSecondPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoryGameSecondPanel.h; path = ../../StoryGameSecondPanel.h; sourceTree = "<group>"; };
+		E07FE6931631E4F8000C1E9F /* StoryGameSecondPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoryGameSecondPanel.m; path = ../../StoryGameSecondPanel.m; sourceTree = "<group>"; };
+		E07FE6961631E4F8000C1E9F /* nicepicture2-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "nicepicture2-hd.png"; path = "Resources/nicepicture2-hd.png"; sourceTree = "<group>"; };
+		E07FE6971631E4F8000C1E9F /* nicepicture2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nicepicture2.png; path = Resources/nicepicture2.png; sourceTree = "<group>"; };
 		E08792DE1620E3A100574E8D /* tempinventorybutton-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tempinventorybutton-hd.png"; sourceTree = "<group>"; };
 		E08792DF1620E3A100574E8D /* tempinventorybutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tempinventorybutton.png; sourceTree = "<group>"; };
 		E08ABBB6162227350027A294 /* statsandinventory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = statsandinventory.h; sourceTree = SOURCE_ROOT; };
@@ -565,6 +572,8 @@
 		4C0AF441161F31FC00B6E3AA /* Cyan Adventures */ = {
 			isa = PBXGroup;
 			children = (
+				E07FE6921631E4F8000C1E9F /* StoryGameSecondPanel.h */,
+				E07FE6931631E4F8000C1E9F /* StoryGameSecondPanel.m */,
 				E068FFC9161F77440007D14A /* StoryGameFirstPanel.h */,
 				E068FFCA161F77440007D14A /* StoryGameFirstPanel.m */,
 				4CEA9557161F3FA600CDC25C /* Title screen.h */,
@@ -600,6 +609,8 @@
 				4CCEEF861628819F0044995D /* stickfigureducking-hd.png */,
 				4CCEEF871628819F0044995D /* stickfigureducking.png */,
 				4CFD13F51626EEEA001814FC /* flame-hd.png */,
+				E07FE6961631E4F8000C1E9F /* nicepicture2-hd.png */,
+				E07FE6971631E4F8000C1E9F /* nicepicture2.png */,
 				4CFD13F61626EEEA001814FC /* flame.png */,
 				4CF750F91625AFB5008DC395 /* stickfigure2-hd.png */,
 				4CF750FA1625AFB5008DC395 /* stickfigure2.png */,
@@ -1102,6 +1113,8 @@
 				4CCEEF891628819F0044995D /* stickfigureducking.png in Resources */,
 				4C52F31116299E5B002FD605 /* snow-hd.png in Resources */,
 				4C52F31216299E5B002FD605 /* snow.png in Resources */,
+				E07FE6981631E4F8000C1E9F /* nicepicture2-hd.png in Resources */,
+				E07FE6991631E4F8000C1E9F /* nicepicture2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1219,6 +1232,7 @@
 				4CEA9559161F3FA600CDC25C /* Title screen.m in Sources */,
 				E068FFCB161F77450007D14A /* StoryGameFirstPanel.m in Sources */,
 				E08ABBB8162227350027A294 /* statsandinventory.m in Sources */,
+				E07FE6941631E4F8000C1E9F /* StoryGameSecondPanel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

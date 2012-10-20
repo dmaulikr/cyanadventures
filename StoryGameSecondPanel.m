@@ -1,24 +1,24 @@
 //
-//  StoryGameFirstPanel.m
+//  StoryGameSecondPanel.m
 //  Cyan Adventures
 //
-//  Created by Michael Brand on 05/10/2012.
+//  Created by Michael Brand on 19/10/2012.
 //
 //
 
-#import "StoryGameFirstPanel.h"
+#import "StoryGameSecondPanel.h"
 #import "BattleScene.h"
 #import "CCTouchDispatcher.h"
 #import "statsandinventory.h"
-#import "StoryGameSecondPanel.h"
+#import "StoryGameFirstPanel.h"
 
-#pragma mark - StoryGameFirstPanel
+#pragma mark - StoryGameSecondPanel
 
-@implementation StoryGameFirstPanel
+@implementation StoryGameSecondPanel
 
 +(CCScene *) scene
 {
-    	
+    
     // 'scene' is an autorelease object.
 	CCScene *scene = [CCScene node];
     
@@ -26,12 +26,12 @@
     [scene addChild:inv z:3];
     
 	// 'layer' is an autorelease object.
-	StoryGameFirstPanel *layer = [[[StoryGameFirstPanel alloc] initWithHUD:inv] autorelease];
+	StoryGameSecondPanel *layer = [[[StoryGameSecondPanel alloc] initWithHUD:inv] autorelease];
 	
 	// add layer as a child to scene
 	[scene addChild: layer];
     
-
+    
     
 	// return the scene
 	return scene;
@@ -47,16 +47,16 @@
 	CCSprite *background;
 	
 	if( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone ) {
-		background = [CCSprite spriteWithFile:@"nicepicture.png"];
+		background = [CCSprite spriteWithFile:@"nicepicture2.png"];
 		background.rotation = 90;
 	} else {
-		background = [CCSprite spriteWithFile:@"nicepicture-hd.png"];
+		background = [CCSprite spriteWithFile:@"nicepicture2-hd.png"];
 	}
 	background.position = ccp(size.width/2, size.height/2);
     
 	// add the label as a child to this Layer
 	[self addChild: background];
-    [self reorderChild: background z:1];
+    
 }
 
 
@@ -71,15 +71,6 @@
         [self setIsTouchEnabled:TRUE];
         
         CGSize size = [[CCDirector sharedDirector] winSize];
-        
-        _enemy = [CCSprite spriteWithFile:@"stickfigureenemy.png"];
-        [_enemy setPosition:ccp(160,70)];
-        [self addChild:_enemy];
-        float w2 = [_enemy contentSize].width;
-        float h2 = [_enemy contentSize].height;
-        CGPoint bPoint = CGPointMake([_enemy position].x - (w2/2), [_enemy position].y - (h2/2));
-        spRect = CGRectMake(bPoint.x, bPoint.y, w2, h2);
-        [self reorderChild:_enemy z:2];
         
         //Setting Up Arrow Buttons
         CCSprite *rightarrow2 = [CCSprite spriteWithFile:@"arrow-right.png"];
@@ -111,10 +102,10 @@
     location = [[CCDirector sharedDirector] convertToGL:location];
     
     if (CGRectContainsPoint(spRectR2, location)) {
-        [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1 scene:[StoryGameSecondPanel scene]]];    }
-    if (CGRectContainsPoint(spRectL2, location)) {
-        
+
     }
+    if (CGRectContainsPoint(spRectL2, location)) {
+        [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1 scene:[StoryGameFirstPanel scene]]];    }
 }
 
 - (void)ccTouchesEnded:(UITouch *)touches withEvent:(UIEvent *)event;
@@ -123,9 +114,6 @@
     CGPoint location = [touch locationInView:[touch view]];
     
     location = [[CCDirector sharedDirector] convertToGL:location];
-    
-    if (CGRectContainsPoint(spRect, location)) {
-        [[CCDirector sharedDirector] replaceScene: [BattleScene scene]];    }
 }
 
 
@@ -139,3 +127,4 @@
 	[super dealloc];
 }
 @end
+
