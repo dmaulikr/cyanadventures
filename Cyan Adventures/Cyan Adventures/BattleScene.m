@@ -39,7 +39,11 @@
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super's" return value
 	if( (self=[super init]) ) {
-		
+        //Background
+        background = [CCSprite spriteWithFile:@"menubackground.png"];
+        [background setPosition:ccp([background contentSize].width / 2,[background contentSize].height /2)];
+        [self addChild:background];
+        [self schedule:@selector(backgroundupdate:) interval:0];
 		// create and initialize a Label
 		CCLabelTTF *label = [CCLabelTTF labelWithString:@"Battle Test" fontName:@"Marker Felt" fontSize:20];
         
@@ -65,7 +69,7 @@
         stationary = [[CCTextureCache sharedTextureCache] addImage:@"stickfigure.png"];
         ducking = [[CCTextureCache sharedTextureCache] addImage:@"stickfigureducking.png"];
         
-       
+
         
     
         //Setting Up Arrow Buttons
@@ -186,7 +190,7 @@
             Jumping = 1;
         }
         if (Playermoving == 2){
-            [_player setPosition:ccp(_player.position.x + 1,_player.position.y)];
+            [_player setPosition:ccp(_player.position.x + 3,_player.position.y)];
         }
         if (Playermoving == 3){
             [_player setTexture:ducking];
@@ -194,7 +198,7 @@
             Playerducking = 1;
         }
         if (Playermoving == 4){
-            [_player setPosition:ccp(_player.position.x - 1,_player.position.y)];
+            [_player setPosition:ccp(_player.position.x - 3,_player.position.y)];
         }
         if (Playermoving == 5){
             Jumping = 1;
@@ -430,6 +434,31 @@
     if (Playerducking == 0){
         [_player setTexture:stationary];
         [_player setTextureRect:CGRectMake(0, 0, stationary.contentSize.width, stationary.contentSize.height)];
+    }
+}
+
+-(void) backgroundupdate: (ccTime) dt {
+    if (background.position.x < 300) {
+        if (_player.position.x <= 150){
+            [_player setPosition:ccp(_player.position.x + 5, _player.position.y)];
+            [background setPosition:ccp(background.position.x + 5, background.position.y)];
+            if (background.position.x > 300){
+                int oldx = background.position.x;
+                [background setPosition:ccp(300,background.position.y)];
+                [_player setPosition:ccp(_player.position.x + (background.position.x - oldx),_player.position.y)];
+            }
+        }
+    }
+    if (background.position.x >= 180) {
+        if (_player.position.x > 320){
+            [_player setPosition:ccp(_player.position.x - 5, _player.position.y)];
+            [background setPosition:ccp(background.position.x - 5, background.position.y)];
+            if (background.position.x < 180){
+                int oldx = background.position.x;
+                [background setPosition:ccp(180,background.position.y)];
+                [_player setPosition:ccp(_player.position.x + (background.position.x - oldx),_player.position.y)];
+            }
+        }
     }
 }
 

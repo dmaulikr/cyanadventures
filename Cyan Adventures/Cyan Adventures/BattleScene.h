@@ -59,6 +59,9 @@
     CCTexture2D *flameanimation2;
     CCTexture2D *stationary;
     CCTexture2D *ducking;
+    
+    //Background
+    CCSprite *background;
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child
