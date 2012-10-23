@@ -21,7 +21,6 @@
         dexterity = 10;
         intelligence = 10;
         
-        
         inventory = [CCSprite spriteWithFile:@"inventorybutton.png"];
         [inventory setPosition:ccp(40,40)];
         float w4 = [inventory contentSize].width;
@@ -44,11 +43,6 @@
     return self;
 }
 
--(NSString*)getSpriteFromId:(int)givenid {
-    
-    
-}
-
 - (void)ccTouchesBegan:(UITouch *)touches withEvent:(UIEvent *)event;
 {
     UITouch *touch = [touches anyObject];
@@ -58,12 +52,17 @@
     
     if (CGRectContainsPoint(spBag, location)) {
         if(invopen == 0) {
+            if(statsopen == 0) {
+                lcinv = [CCLayerColor layerWithColor:ccc4(205, 198, 115, 200) width:(300) height:(300)];
+                lcinv.position = ccp(75,75);
+                [self addChild: lcinv];
             
-            NSLog(@"Inventory Opened");
-            invopen = 1;
+                NSLog(@"Inventory Opened");
+                invopen = 1;
+            }
         } else if(invopen == 1) {
             
-            [self removeChild: test cleanup:YES];
+            [self removeChild: lcinv cleanup:YES];
             
             NSLog(@"Inventory Closed");
             invopen = 0;
@@ -72,17 +71,35 @@
     
     if (CGRectContainsPoint(spStats, location)) {
         if(statsopen == 0) {
-            statstring = [NSString stringWithFormat:@"Strength: %d", strength];
-            statlabel = [CCLabelTTF labelWithString:statstring fontName:@"Marker Felt" fontSize:25];
-            [statlabel setPosition:ccp(300,75)];
-            [self addChild: statlabel];
-            statlabel.color = ccc3(0,0,0);
+            if(invopen == 0) {
+                lcstats = [CCLayerColor layerWithColor:ccc4(255, 255, 255, 255) width:(100) height:(100)];
+                lcstats.position = ccp(380,25);
+                [self addChild: lcstats];
             
-            NSLog(@"Stat screen Opened");
-            statsopen = 1;
+                statstring1 = [NSString stringWithFormat:@"Strength: %d", strength];
+                statlabel1 = [CCLabelTTF labelWithString:statstring1 fontName:@"Marker Felt" fontSize:15];
+                [statlabel1 setPosition:ccp(50,80)];
+                [lcstats addChild: statlabel1];
+                statlabel1.color = ccc3(255,0,0);
+            
+                statstring2 = [NSString stringWithFormat:@"Dexterity: %d", dexterity];
+                statlabel2 = [CCLabelTTF labelWithString:statstring2 fontName:@"Marker Felt" fontSize:15];
+                [statlabel2 setPosition:ccp(50,60)];
+                [lcstats addChild: statlabel2];
+                statlabel2.color = ccc3(0,255,0);
+            
+                statstring3 = [NSString stringWithFormat:@"Intelligence: %d", intelligence];
+                statlabel3 = [CCLabelTTF labelWithString:statstring3 fontName:@"Marker Felt" fontSize:15];
+                [statlabel3 setPosition:ccp(50,40)];
+                [lcstats addChild: statlabel3];
+                statlabel3.color = ccc3(0,0,255);
+            
+                NSLog(@"Stat screen Opened");
+                statsopen = 1;
+            }
         } else if(statsopen == 1) {
             
-            [self removeChild: statlabel cleanup:YES];
+            [self removeChild: lcstats cleanup:YES];
             
             NSLog(@"Stat screen Closed");
             statsopen = 0;

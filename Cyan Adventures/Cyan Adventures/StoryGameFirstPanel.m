@@ -99,6 +99,7 @@
         CGPoint cPoint = CGPointMake([leftarrow2 position].x - (w3/2), [leftarrow2 position].y - (h3/2));
         spRectL2 = CGRectMake(cPoint.x, cPoint.y, w3, h3);
         [self reorderChild:leftarrow2 z:2];
+        
 	}
 	return self;
 }

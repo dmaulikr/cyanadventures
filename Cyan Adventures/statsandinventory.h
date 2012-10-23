@@ -27,11 +27,18 @@
     CCSprite *inventory;
     CCSprite *statsbutton;
     CCSprite *test;
-    NSString *statstring;
-    CCLabelTTF *statlabel;
+    NSString *statstring1;
+    NSString *statstring2;
+    NSString *statstring3;
+    CCLabelTTF *statlabel1;
+    CCLabelTTF *statlabel2;
+    CCLabelTTF *statlabel3;
+    CCLayerColor *lcstats;
+    CCLayerColor *lcinv;
 }
 
 @property (readwrite) int invopen;
 @property (readwrite) int statsopen;
+@property (readwrite) int strength;
 
 @end
